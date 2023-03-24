@@ -39,7 +39,7 @@ public class Tank : MonoBehaviour
         _shootInput = _playerInput.actions["Shoot"];
         _spriteHalfSize = GetComponent<SpriteRenderer>().sprite.bounds.extents;     
         _spriteHalfSize.Scale(transform.localScale);                          
-        _cameraHalfSize = new Vector2(_camera.orthographicSize * _camera.aspect, _camera.orthographicSize);     //Method 3
+        _cameraHalfSize = new Vector2(_camera.orthographicSize * _camera.aspect, _camera.orthographicSize);     
         _shotDelay = 1.0f / _shotPerSecond;
         _lastShotTime = 0.0f;
         _bulletEmitIndex = 0;
