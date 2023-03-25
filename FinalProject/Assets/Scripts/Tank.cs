@@ -49,7 +49,7 @@ public class Tank : MonoBehaviour
 
     void Update()
     {
-        Vector2 steering = _streengInput.ReadValue<Vector2>();     
+        Vector2 steering = _streengInput.ReadValue<Vector2>();
 
 
         Vector3 delta = _speed * steering * Time.deltaTime;
