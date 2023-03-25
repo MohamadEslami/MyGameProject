@@ -15,21 +15,23 @@ public class Tank : MonoBehaviour
     [SerializeField]
     float _shotPerSecond = 10.0f;
 
-    [SerializeField]
-    float _bulletThrust = 10.0f;
+ //   [SerializeField]
+//    float _bulletThrust = 10.0f;
 
-    [SerializeField]
-    Spawner _bulletSpawner = null;
+    
 
-    [SerializeField]
-    Transform[] _bulletEmitPoint = null;
+    public GameObject Bullet;
+    public GameObject Gun;
+    public float PowerShoot;
+    private float LatShoot;
+
 
     InputAction _streengInput;
     InputAction _shootInput;
 
     float _shotDelay;
     float _lastShotTime;
-    int _bulletEmitIndex;
+//    int _bulletEmitIndex;
     Vector3 _spriteHalfSize;     
     Vector2 _cameraHalfSize;      
 
@@ -42,7 +44,7 @@ public class Tank : MonoBehaviour
         _cameraHalfSize = new Vector2(_camera.orthographicSize * _camera.aspect, _camera.orthographicSize);     
         _shotDelay = 1.0f / _shotPerSecond;
         _lastShotTime = 0.0f;
-        _bulletEmitIndex = 0;
+       // _bulletEmitIndex = 0;
     }
 
     // Update is called once per frame
@@ -93,23 +95,42 @@ public class Tank : MonoBehaviour
 
 
 
-            if (_shootInput.ReadValue<float>() == 1.0f)
+        if (_shootInput.ReadValue<float>() == 1.0f)
+        {
+            //float timeDelta = Time.time - _lastShotTime;
+            //if (timeDelta >= _shotDelay)
+            //{
+            //Transform t = _bulletEmitPoint[_bulletEmitIndex];
+            //Transform bullet = _bulletSpawner.Spawn(t.position, t.rotation);
+            //Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
+            //bulletBody.AddForce(transform.up * _bulletThrust);
+
+            //_bulletEmitIndex = (_bulletEmitIndex + 1) % _bulletEmitPoint.Length;
+            //    _lastShotTime = Time.time;
+
+            //}
+            if (Time.time > LatShoot + PowerShoot)
             {
-                float timeDelta = Time.time - _lastShotTime;
-                if (timeDelta >= _shotDelay)
-                {
-                Transform t = _bulletEmitPoint[_bulletEmitIndex];
-                Transform bullet = _bulletSpawner.Spawn(t.position, t.rotation);
-                Rigidbody2D bulletBody = bullet.GetComponent<Rigidbody2D>();
-                bulletBody.AddForce(transform.up * _bulletThrust);
 
-                _bulletEmitIndex = (_bulletEmitIndex + 1) % _bulletEmitPoint.Length;
-                    _lastShotTime = Time.time;
-
-                }
+                //    GameObject Bullet_ = Instantiate(Bullet, Gun.transform.position, Quaternion.identity) as GameObject;
+                //    //Bullet_.transform.right = transform.up;
+                //    LatShoot = Time.time;
+                //}
+                GameObject Bullet_ = Instantiate(Bullet, Gun.transform.position, Quaternion.identity) as GameObject;
+                Bullet_.transform.right = transform.up;
+                LatShoot = Time.time;
             }
-
-
+        }
 
         }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
+        if (collision.gameObject.tag == "Coin")
+        {
+
+
+            Destroy(collision.gameObject);
+        }
     }
+}
