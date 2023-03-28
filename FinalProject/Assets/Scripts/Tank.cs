@@ -15,10 +15,12 @@ public class Tank : MonoBehaviour
     [SerializeField]
     float _shotPerSecond = 10.0f;
 
- //   [SerializeField]
-//    float _bulletThrust = 10.0f;
+    //   [SerializeField]
+    //    float _bulletThrust = 10.0f;
+
 
     
+    private AudioSource au;
 
     public GameObject Bullet;
     public GameObject Gun;
@@ -33,8 +35,13 @@ public class Tank : MonoBehaviour
     float _lastShotTime;
 //    int _bulletEmitIndex;
     Vector3 _spriteHalfSize;     
-    Vector2 _cameraHalfSize;      
+    Vector2 _cameraHalfSize;
 
+    [Header("Sounds")]
+    public AudioClip Shoot_sound;
+    public AudioClip GetCoin_sound;
+
+    public AudioSource GameMusic;
     void Start()
     {
         _streengInput = _playerInput.actions["SteerTank"];
@@ -44,7 +51,10 @@ public class Tank : MonoBehaviour
         _cameraHalfSize = new Vector2(_camera.orthographicSize * _camera.aspect, _camera.orthographicSize);     
         _shotDelay = 1.0f / _shotPerSecond;
         _lastShotTime = 0.0f;
-       // _bulletEmitIndex = 0;
+
+        au = GetComponent<AudioSource>();
+
+        // _bulletEmitIndex = 0;
     }
 
     // Update is called once per frame
@@ -116,6 +126,7 @@ public class Tank : MonoBehaviour
                 //    //Bullet_.transform.right = transform.up;
                 //    LatShoot = Time.time;
                 //}
+                au.PlayOneShot(Shoot_sound);
                 GameObject Bullet_ = Instantiate(Bullet, Gun.transform.position, Quaternion.identity) as GameObject;
                 Bullet_.transform.right = transform.up;
                 LatShoot = Time.time;
@@ -129,7 +140,8 @@ public class Tank : MonoBehaviour
         if (collision.gameObject.tag == "Coin")
         {
 
-
+            au.PlayOneShot(GetCoin_sound);
+            
             Destroy(collision.gameObject);
         }
     }
