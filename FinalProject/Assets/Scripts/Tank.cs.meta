@@ -6,8 +6,12 @@ MonoImporter:
   defaultReferences:
   - _camera: {instanceID: 0}
   - _playerInput: {instanceID: 0}
-  - Bullet: {fileID: 4429216231415809123, guid: edcc8f9877f9d4579ad8163cf7bdac11, type: 3}
-  - Gun: {fileID: 4429216231415809123, guid: edcc8f9877f9d4579ad8163cf7bdac11, type: 3}
+  - Bullet: {instanceID: 0}
+  - Gun: {instanceID: 0}
+  - Shoot_sound: {instanceID: 0}
+  - GetCoin_sound: {instanceID: 0}
+  - Moving: {instanceID: 0}
+  - GameMusic: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,5 +1,6 @@
 using UnityEngine.InputSystem;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Tank : MonoBehaviour
 {
@@ -18,8 +19,12 @@ public class Tank : MonoBehaviour
     //   [SerializeField]
     //    float _bulletThrust = 10.0f;
 
+    public float MoveSpeed;
+    public float RotateSpeed;
 
-    
+    private int MyCoin;
+    public Text MyCoin_txt;
+
     private AudioSource au;
 
     public GameObject Bullet;
@@ -31,6 +36,8 @@ public class Tank : MonoBehaviour
     InputAction _streengInput;
     InputAction _shootInput;
 
+    private Rigidbody2D rb;
+
     float _shotDelay;
     float _lastShotTime;
 //    int _bulletEmitIndex;
@@ -40,6 +47,7 @@ public class Tank : MonoBehaviour
     [Header("Sounds")]
     public AudioClip Shoot_sound;
     public AudioClip GetCoin_sound;
+    public AudioClip Moving;
 
     public AudioSource GameMusic;
     void Start()
@@ -53,7 +61,7 @@ public class Tank : MonoBehaviour
         _lastShotTime = 0.0f;
 
         au = GetComponent<AudioSource>();
-
+        MyCoin = 0;
         // _bulletEmitIndex = 0;
     }
 
@@ -61,6 +69,25 @@ public class Tank : MonoBehaviour
 
     void Update()
     {
+
+
+        //if (!Input.anyKey)
+        //{
+        //    //Vector2 Move = new Vector2(Input.GetAxis("JoyHorizontal"), Input.GetAxis("JoyVertical"));
+        //    Vector2 Move = _streengInput.ReadValue<Vector2>();
+        //    rb.velocity = (Vector2)transform.up * Move.y * MoveSpeed * Time.deltaTime;
+        //    rb.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -Move.x * RotateSpeed * Time.deltaTime));
+        //}
+        //else
+        //{
+        //    //Vector2 Move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+        //    Vector2 Move = _streengInput.ReadValue<Vector2>();
+        //    rb.velocity = (Vector2)transform.up * Move.y * MoveSpeed * Time.deltaTime;
+        //    rb.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -Move.x * RotateSpeed * Time.deltaTime));
+        //}
+
+        
+
         Vector2 steering = _streengInput.ReadValue<Vector2>();
 
 
@@ -68,40 +95,51 @@ public class Tank : MonoBehaviour
         Vector2 newPosition = transform.position + delta;
 
 
-        if (Mathf.Abs(newPosition.x) > (_cameraHalfSize.x - _spriteHalfSize.x))   
+        if (Mathf.Abs(newPosition.x) > (_cameraHalfSize.x - _spriteHalfSize.x))
         {
             newPosition.x = transform.position.x;
+
         }
 
-        if (Mathf.Abs(newPosition.y) > (_cameraHalfSize.y - _spriteHalfSize.y))   
+        if (Mathf.Abs(newPosition.y) > (_cameraHalfSize.y - _spriteHalfSize.y))
         {
             newPosition.y = transform.position.y;
+
         }
 
 
         if (steering.y > 0)
         {
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0));
+
+
+            
+
             transform.position = newPosition;
+            //au.PlayOneShot(Moving);
         }
         if (steering.y < 0)
 
         {
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 180));
             transform.position = newPosition;
+            //au.PlayOneShot(Moving);
         }
         if (steering.x > 0)
         {
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, -90));
             transform.position = newPosition;
+            //au.PlayOneShot(Moving);
         }
         if (steering.x < 0)
 
         {
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 90));
             transform.position = newPosition;
+           // au.PlayOneShot(Moving);
 
         }
+
 
 
 
@@ -131,18 +169,19 @@ public class Tank : MonoBehaviour
                 Bullet_.transform.right = transform.up;
                 LatShoot = Time.time;
             }
+            
         }
-
-        }
+        //MyCoin_txt.text = MyCoin.ToString();
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        if (collision.gameObject.tag == "Coin")
+         if (collision.gameObject.tag == "Coin")
         {
 
             au.PlayOneShot(GetCoin_sound);
-            
+            MyCoin += 1;
             Destroy(collision.gameObject);
+
         }
     }
 }
