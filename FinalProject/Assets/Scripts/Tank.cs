@@ -71,23 +71,6 @@ public class Tank : MonoBehaviour
     {
 
 
-        //if (!Input.anyKey)
-        //{
-        //    //Vector2 Move = new Vector2(Input.GetAxis("JoyHorizontal"), Input.GetAxis("JoyVertical"));
-        //    Vector2 Move = _streengInput.ReadValue<Vector2>();
-        //    rb.velocity = (Vector2)transform.up * Move.y * MoveSpeed * Time.deltaTime;
-        //    rb.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -Move.x * RotateSpeed * Time.deltaTime));
-        //}
-        //else
-        //{
-        //    //Vector2 Move = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        //    Vector2 Move = _streengInput.ReadValue<Vector2>();
-        //    rb.velocity = (Vector2)transform.up * Move.y * MoveSpeed * Time.deltaTime;
-        //    rb.MoveRotation(transform.rotation * Quaternion.Euler(0, 0, -Move.x * RotateSpeed * Time.deltaTime));
-        //}
-
-        
-
         Vector2 steering = _streengInput.ReadValue<Vector2>();
 
 
@@ -108,12 +91,11 @@ public class Tank : MonoBehaviour
         }
 
 
+
         if (steering.y > 0)
         {
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 0));
 
-
-            
 
             transform.position = newPosition;
             //au.PlayOneShot(Moving);
@@ -136,12 +118,13 @@ public class Tank : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(new Vector3(transform.rotation.x, transform.rotation.y, 90));
             transform.position = newPosition;
-           // au.PlayOneShot(Moving);
+            // au.PlayOneShot(Moving);
 
         }
 
 
 
+    
 
         if (_shootInput.ReadValue<float>() == 1.0f)
         {
@@ -171,7 +154,7 @@ public class Tank : MonoBehaviour
             }
             
         }
-        //MyCoin_txt.text = MyCoin.ToString();
+        
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -180,7 +163,9 @@ public class Tank : MonoBehaviour
 
             au.PlayOneShot(GetCoin_sound);
             MyCoin += 1;
+            
             Destroy(collision.gameObject);
+            MyCoin_txt.text = MyCoin.ToString();
 
         }
     }
