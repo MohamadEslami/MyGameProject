@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Coin
+  - b_enemy
+  - p_enemy
   layers:
   - Default
   - TransparentFX
@@ -12,12 +14,12 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - wall
+  - Enemy
+  - Coin
+  - EnemyBullet
+  - PlayerBullet
   - 
   - 
   - 
@@ -41,22 +43,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: BackgroundDistant
-    uniqueID: 1081567035
-    locked: 0
-  - name: BackgroundNear
-    uniqueID: 3361447449
-    locked: 0
-  - name: Bullets
-    uniqueID: 585588303
-    locked: 0
-  - name: Enemies
-    uniqueID: 2208452829
-    locked: 0
-  - name: Player
-    uniqueID: 2044553757
-    locked: 0
-  - name: Bullet
-    uniqueID: 2061789831
     locked: 0

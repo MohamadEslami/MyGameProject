@@ -20,7 +20,7 @@ public class Tank : MonoBehaviour
     [SerializeField]
     PlayerInput _playerInput = null;
 
-   
+
     public float MoveSpeed;
     public float RotateSpeed;
 
@@ -96,8 +96,8 @@ public class Tank : MonoBehaviour
        
         transform.rotation = transform.rotation * Quaternion.Euler(0, 0, -steering.x * RotateSpeed * Time.deltaTime);
         transform.position = newPosition;
-            //au.PlayOneShot(Moving);
-       
+        //au.PlayOneShot(Moving);
+
         //if (steering.y < 0)
 
         //{
@@ -121,7 +121,8 @@ public class Tank : MonoBehaviour
         //}
 
 
-
+       
+        
 
 
         if (_shootInput.ReadValue<float>() == 1.0f)

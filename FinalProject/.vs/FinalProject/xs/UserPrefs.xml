@@ -1,17 +1,17 @@
 ﻿<Properties StartupConfiguration="{E1456745-ED92-4EB6-8905-E64DC1E47277}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Bullet.cs">
     <Files>
-      <File FileName="Assets/Scripts/Tank.cs" Line="98" Column="4" />
-      <File FileName="Assets/Scripts/exp.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/Bullet.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/CameraMove.cs" Line="17" Column="1" />
-      <File FileName="Assets/Scripts/EnemyManager.cs" Line="31" Column="6" />
+      <File FileName="Assets/Scripts/Tank.cs" Line="104" Column="21" />
       <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/exp.cs" />
+      <File FileName="Assets/Scripts/Bullet.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CameraMove.cs" Line="14" Column="103" />
+      <File FileName="Assets/Scripts/EnemyManager.cs" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="f4cfd5ac-0b8a-417e-becf-0a09197c02ad" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="aba3d0ba-1ccb-41b6-8c65-9eec985fd4df" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
