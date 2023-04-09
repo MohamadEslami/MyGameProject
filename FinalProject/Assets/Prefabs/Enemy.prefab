@@ -213,7 +213,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 4ae16cd2e5b784c5da8bbdca77f7a6b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4e67687cf14d64c40962c27c0e1b0f61, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 1
-  height: 1.93
+  radius: 0.98
+  height: 1.47
   canMove: 1
   maxSpeed: 0
   gravity: {x: NaN, y: NaN, z: NaN}
@@ -324,9 +324,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 2.06
-  pickNextWaypointDist: 2
-  endReachedDistance: 4.07
+  slowdownDistance: 3.16
+  pickNextWaypointDist: 4.48
+  endReachedDistance: 5.92
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -357,12 +357,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecba03c9b0b948fc9c3cf329bf5e047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 3
-  Bullet: {fileID: 4429216231415809123, guid: edcc8f9877f9d4579ad8163cf7bdac11, type: 3}
+  MoveSpeed: 4
+  Bullet: {fileID: 594528421923364124, guid: 2f24a9c3066fa4b95964e1e44ba2a900, type: 3}
   Gun: {fileID: 5755760866022759373}
   Blast: {fileID: 7763374079979004200, guid: d35760513e6a04f9e8d83e22a2077480, type: 3}
-  PowerShoot: 2.5
-  distanceToShoot: 5
+  PowerShoot: 2
+  distanceToShoot: 7
 --- !u!1 &5755760866022759373
 GameObject:
   m_ObjectHideFlags: 0
