@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class Tank : MonoBehaviour
 {
+    public int Health;
+    private float MaxHealth;
+    public Image HealthBar;
     //[SerializeField]
     //Camera _camera = null;
 
@@ -67,13 +70,15 @@ public class Tank : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         au = GetComponent<AudioSource>();
         MyCoin = 0;
-        
+        MaxHealth = Health;
+
     }
 
     // Update is called once per frame
 
     void Update()
     {
+        HealthBar.fillAmount = Health / MaxHealth;
         Vector2 steering = _streengInput.ReadValue<Vector2>();
 
         Vector3 delta = (Vector2)transform.up * steering.y * MoveSpeed * Time.deltaTime;
@@ -168,5 +173,18 @@ public class Tank : MonoBehaviour
 
         }
 
+        if (collision.gameObject.tag == "b_enemy")
+        {
+            Health -= 1;
+
+        }
+
+        if (collision.gameObject.tag == "Health")
+        {
+            au.PlayOneShot(GetCoin_sound);
+            Health += 1;
+            Destroy(collision.gameObject);
+
+        }
     }
 }
