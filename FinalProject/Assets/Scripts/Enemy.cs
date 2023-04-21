@@ -66,7 +66,7 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.tag == "p_enemy")
         {
-            //ds.target.GetComponent<Tank>().Kill += 1;
+            ds.target.GetComponent<Tank>().Kill += 1;
             Instantiate(Blast, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

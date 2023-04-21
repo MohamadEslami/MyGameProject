@@ -15,7 +15,9 @@ public class Bullet : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         Instantiate(Exp, collision.contacts[0].point, Quaternion.identity);
         Destroy(gameObject);
+        
     }
 }

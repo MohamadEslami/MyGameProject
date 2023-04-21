@@ -7,6 +7,12 @@ public class Tank : MonoBehaviour
     public int Health;
     private float MaxHealth;
     public Image HealthBar;
+
+    public int Kill;
+    public int KillMax;
+    public Text Kill_txt;
+
+
     //[SerializeField]
     //Camera _camera = null;
 
@@ -70,6 +76,7 @@ public class Tank : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         au = GetComponent<AudioSource>();
         MyCoin = 0;
+        Kill = 0;
         MaxHealth = Health;
 
     }
@@ -79,6 +86,9 @@ public class Tank : MonoBehaviour
     void Update()
     {
         HealthBar.fillAmount = Health / MaxHealth;
+
+        Kill_txt.text = "Kill : " + Kill + " / " + KillMax;
+
         Vector2 steering = _streengInput.ReadValue<Vector2>();
 
         Vector3 delta = (Vector2)transform.up * steering.y * MoveSpeed * Time.deltaTime;
@@ -176,6 +186,7 @@ public class Tank : MonoBehaviour
         if (collision.gameObject.tag == "b_enemy")
         {
             Health -= 1;
+            
 
         }
 
