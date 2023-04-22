@@ -11,9 +11,12 @@ public class UI : MonoBehaviour
     }
     public void AgainBtn()
     {
-        var Sc = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(Sc.name);
+        Scene currentScene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(currentScene.buildIndex);
+        Time.timeScale = 1; // Set the time scale back to 1
     }
+
+
     public void ChangeSceneBtn(string Name)
     {
         SceneManager.LoadScene(Name);

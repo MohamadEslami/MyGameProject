@@ -55,7 +55,7 @@ public class Enemy : MonoBehaviour
     {
         if (Time.time > LatShoot + PowerShoot)
         {
-//            GetComponent<AudioSource>().Play();
+           //GetComponent<AudioSource>().Play();
             GameObject Bullet_ = Instantiate(Bullet, Gun.transform.position, Quaternion.identity) as GameObject;
             Bullet_.transform.right = transform.up;
             LatShoot = Time.time;

@@ -161,9 +161,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4645584434871230614}
-  m_LocalRotation: {x: -0.024401097, y: -0.021169119, z: -0.010022295, w: 0.99942786}
-  m_LocalPosition: {x: 0.027, y: -0.125, z: 0}
-  m_LocalScale: {x: 1.22, y: 1.22, z: 1.22}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.56, y: 0.56, z: 0.56}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2355607164737325271}
@@ -171,7 +171,7 @@ Transform:
   - {fileID: 3221320017537810413}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -2.82, y: -2.4, z: -1.09}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4113665467383736982
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -288,7 +288,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.62
+  m_Radius: 0.56
 --- !u!114 &3866239499612383903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,8 +302,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 5
-  radius: 0.98
-  height: 1.47
+  radius: 0.97
+  height: 1.24
   canMove: 1
   maxSpeed: 0
   gravity: {x: NaN, y: NaN, z: NaN}
@@ -324,9 +324,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 3.47
-  pickNextWaypointDist: 4.24
-  endReachedDistance: 7.01
+  slowdownDistance: 0.8
+  pickNextWaypointDist: 0.97
+  endReachedDistance: 1.39
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -357,12 +357,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecba03c9b0b948fc9c3cf329bf5e047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 4
+  MoveSpeed: 2
   Bullet: {fileID: 594528421923364124, guid: 2f24a9c3066fa4b95964e1e44ba2a900, type: 3}
   Gun: {fileID: 5755760866022759373}
   Blast: {fileID: 7763374079979004200, guid: d35760513e6a04f9e8d83e22a2077480, type: 3}
-  PowerShoot: 2
-  distanceToShoot: 7
+  PowerShoot: 1
+  distanceToShoot: 5
 --- !u!1 &5755760866022759373
 GameObject:
   m_ObjectHideFlags: 0
