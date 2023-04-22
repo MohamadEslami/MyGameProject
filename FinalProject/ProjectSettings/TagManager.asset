@@ -8,6 +8,7 @@ TagManager:
   - b_enemy
   - p_enemy
   - Health
+  - Wood
   layers:
   - Default
   - TransparentFX

@@ -324,9 +324,9 @@ MonoBehaviour:
   targetCompatibility: {fileID: 0}
   maxAcceleration: -2.5
   rotationSpeed: 360
-  slowdownDistance: 0.8
-  pickNextWaypointDist: 0.97
-  endReachedDistance: 1.39
+  slowdownDistance: 1.57
+  pickNextWaypointDist: 1.09
+  endReachedDistance: 2.05
   alwaysDrawGizmos: 1
   slowWhenNotFacingTarget: 1
   whenCloseToDestination: 0
@@ -357,12 +357,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eecba03c9b0b948fc9c3cf329bf5e047, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
+  MoveSpeed: 1
   Bullet: {fileID: 594528421923364124, guid: 2f24a9c3066fa4b95964e1e44ba2a900, type: 3}
   Gun: {fileID: 5755760866022759373}
   Blast: {fileID: 7763374079979004200, guid: d35760513e6a04f9e8d83e22a2077480, type: 3}
-  PowerShoot: 1
-  distanceToShoot: 5
+  PowerShoot: 1.5
+  distanceToShoot: 3
 --- !u!1 &5755760866022759373
 GameObject:
   m_ObjectHideFlags: 0

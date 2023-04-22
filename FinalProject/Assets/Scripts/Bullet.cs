@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     public float MoveSpeed;
 
     public GameObject Exp;
+    public GameObject Fire;
 
     void Update()
     {
@@ -18,6 +19,15 @@ public class Bullet : MonoBehaviour
         
         Instantiate(Exp, collision.contacts[0].point, Quaternion.identity);
         Destroy(gameObject);
-        
+
+        if (collision.gameObject.tag == "Wood")
+        {
+
+
+            Instantiate(Fire, collision.contacts[0].point, Quaternion.identity);
+            Destroy(collision.gameObject);
+            
+
+        }
     }
 }

@@ -148,3 +148,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 21
   Exp: {fileID: 2776116039850191133, guid: 46a535cb68cba48c2b6279b14e0aaafa, type: 3}
+  Fire: {fileID: 4423411361237832456, guid: 45dd84525b8394b5a9fed54f72bdaefa, type: 3}
